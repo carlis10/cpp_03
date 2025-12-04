@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 12:06:35 by carlos            #+#    #+#             */
-/*   Updated: 2025/07/14 13:42:29 by carlos           ###   ########.fr       */
+/*   Updated: 2025/12/04 20:43:38 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,21 @@
 
 int main(void)
 {
-	ScavTrap *claptrap = new ScavTrap("Claptrap");
-	claptrap->attack("Jack");
-	claptrap->takeDamage(8);
-	claptrap->beRepaired(7);
-	claptrap->takeDamage(8);
-	claptrap->beRepaired(5);
-	claptrap->takeDamage(4);
-	claptrap->guardGate();
+	ClapTrap clap("clap-trap");
+	clap.attack("Jack");
+	clap.takeDamage(8);
+	clap.beRepaired(7);
+	clap.takeDamage(8);
+	clap.beRepaired(5);
+	clap.takeDamage(4);
+
+	ScavTrap scav("scav-trap");
+	scav.attack("Jack");
+	scav.beRepaired(7);
+	scav.takeDamage(8);
+	scav.takeDamage(8);
+	scav.beRepaired(5);
+	scav.takeDamage(4);
+	scav.guardGate();
 	return 0;
 }

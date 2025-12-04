@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 11:43:38 by carlos            #+#    #+#             */
-/*   Updated: 2025/07/04 12:13:22 by carlos           ###   ########.fr       */
+/*   Updated: 2025/12/04 19:27:31 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,21 @@ void ClapTrap::attack(const std::string& target)
 	if (_life <= 0)
 		return ;
 	std::cout << _name + " attack " + target + " and does " << _damage << " damage." << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &src)
+{
+	if (this != &src)
+	{
+		this->_damage = src._damage;
+		this->_energy = src._energy;
+		this->_life = src._life;
+	}
+
+	return *this;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &copy)
+{
+	*this = copy;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 11:43:38 by carlos            #+#    #+#             */
-/*   Updated: 2025/07/04 13:07:55 by carlos           ###   ########.fr       */
+/*   Updated: 2025/12/04 19:59:18 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(std::string name): _name(name)
 {
-	std::cout << this->getName() + " has been created as ClapTrap." << std::endl;
+	std::cout << _name + " has been created as ClapTrap." << std::endl;
 	_damage = 0;
 	_life = 10;
 	_energy = 10;
@@ -61,33 +61,19 @@ void ClapTrap::attack(const std::string& target)
 	std::cout << _name + " attack " + target + " and does " << _damage << " damage." << std::endl;
 }
 
-void ClapTrap::setDamage(int damage)
+ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
-	_damage = damage;
-}
-void ClapTrap::setEnergy(int energy)
-{
-	_energy = energy;
-}
-void ClapTrap::setLife(int life)
-{
-	_life = life;
+	if (this != &src)
+	{
+		this->_damage = src._damage;
+		this->_energy = src._energy;
+		this->_life = src._life;
+	}
+
+	return *this;
 }
 
-std::string ClapTrap::getName()
+ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-	return (this->_name);
-}
-
-int ClapTrap::getDamage()
-{
-	return (this->_damage);
-}
-int ClapTrap::getLife()
-{
-	return (this->_life);
-}
-int ClapTrap::getEnergy()
-{
-	return (this->_energy);
+	*this = copy;
 }
