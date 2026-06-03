@@ -40,21 +40,13 @@ CPP03/
 │   └── Makefile
 │
 ├── ex02/
-│   ├── ClapTrap.hpp
-│   ├── ScavTrap.hpp
-│   ├── FragTrap.hpp
-│   ├── FragTrap.cpp
-│   ├── main.cpp
-│   └── Makefile
-│
-└── ex03/
     ├── ClapTrap.hpp
     ├── ScavTrap.hpp
     ├── FragTrap.hpp
-    ├── DiamondTrap.hpp
-    ├── DiamondTrap.cpp
+    ├── FragTrap.cpp
     ├── main.cpp
     └── Makefile
+
 ```
 
 ---
@@ -143,40 +135,11 @@ highFivesGuys()
 
 ---
 
-# 💎 ex03 - DiamondTrap
-
-## 🎯 Objetivo
-
-Implementar una clase `DiamondTrap` que hereda de:
-
-- `ScavTrap`
-- `FragTrap`
-
----
-
-## ⚠️ Problema principal
-
-Resolver el **diamond problem** de herencia múltiple.
-
----
-
-## ⚙️ Características
-
-```cpp
-void whoAmI();
-```
-
-- Combina atributos de ambas clases base
-- Gestiona correctamente ambigüedades
-
----
-
 ## 🧠 Conceptos clave
 
 - Herencia múltiple
 - Ambigüedad de clases base
 - Scope resolution operator `::`
-- Arquitectura compleja de clases
 
 ---
 
@@ -186,7 +149,6 @@ void whoAmI();
 cd ex00 && make
 cd ex01 && make
 cd ex02 && make
-cd ex03 && make
 ```
 
 ---
@@ -204,10 +166,6 @@ cd ex03 && make
 ### ex02
 ```bash
 ./fragtrap
-```
-### ex03
-```bash
-./diamondtrap
 ```
 
 ---
